@@ -6,9 +6,10 @@ one:
   email: MyString
   description: MyString
   image_url: MyString
-  agent_mls: MyString
+  agent_mls: "881383"
   phone_number: MyString
   country_code: MyString
+  office: one
 
 two:
   first_name: MyString
