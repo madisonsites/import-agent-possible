@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+luxor:
+  id: 1
   mls: "142246"
 
-two:
+faker:
+  id: 2
   mls: "142247"
