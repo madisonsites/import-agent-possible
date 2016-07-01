@@ -7,7 +7,7 @@ one:
   email: madison@luxfakeestate.com
   description: MyString
   image_url: MyString
-  agent_mls: "881383"
+  mls: "881383"
   phone_number: MyString
   country_code: MyString
   office_id: 1
@@ -19,7 +19,7 @@ two:
   email: madisons@luxfakeestate.com
   description: MyString
   image_url: MyString
-  agent_mls: MyString
+  mls: "881384"
   phone_number: MyString
   country_code: MyString
   office_id: 2
