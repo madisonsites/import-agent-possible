@@ -4,7 +4,7 @@ one:
   id: 1
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: madison@luxfakeestate.com
   description: MyString
   image_url: MyString
   agent_mls: "881383"
@@ -16,7 +16,7 @@ two:
   id: 2
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: madisons@luxfakeestate.com
   description: MyString
   image_url: MyString
   agent_mls: MyString
