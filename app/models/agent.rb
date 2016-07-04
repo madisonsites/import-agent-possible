@@ -1,6 +1,13 @@
 class Agent < ApplicationRecord
-  validates :mls, presence: true, uniqueness: true
-  validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  belongs_to :office
+  include ActiveModel::Validations
+  include ActiveModel::Validations::Callbacks
+
+  attr_accessor :description
+  belongs_to :office, optional: true
+
+  validates :mls, uniqueness: true, allow_nil: true
+  validates :email, uniqueness: true, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  before_validation :clean_description
+
   delegate :mls, to: :office, prefix: true, allow_nil: true
 end
