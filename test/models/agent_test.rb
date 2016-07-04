@@ -9,9 +9,10 @@ class AgentTest < ActiveSupport::TestCase
   end
   test "should not allow invalid email" do
     bad_emails = ["madison", "madison@", "madison.com"]
+    agent = Agent.new(mls: "123456")
     bad_emails.each do |bad_email|
-      agent = Agent.new(email: bad_email, mls: "123456")
-      assert_equal true, agent.invalid?(:email)
+      agent.email = bad_email
+      assert_equal true, agent.invalid?
     end
   end
 end
