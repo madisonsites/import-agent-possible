@@ -1,24 +1,7 @@
-# README
+# The Mission
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Create a Rails app with a migration for an Agent model
+* Create a rake task for reading, parsing and importing the TSV from its URL. 
+* The import should not create duplicates if it is run multiple times
+* It should silently skip over agents with invalid email addresses. 
+* Descriptions contain HTML that should be stripped out.
