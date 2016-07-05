@@ -1,19 +1,20 @@
 require 'open-uri'
 require 'csv'
-if ARGV[1].nil?
-  puts "Please feed me a url to a file"
-  exit 1
-end
-file_url = ARGV[1]
-begin
-  file_given = open(file_url)
-rescue StandardError=>e
-  puts "File cannot be opened, please check url"
-  exit 1
-end
 namespace :agents do
+  @file_url = ARGV[1] if ARGV[1]
   desc "Imports a url to a TSV file into Agents"
-  task :import do |task, args|
+  task :import => :environment do |task, args|
+    if ARGV[1].nil?
+      puts "Please feed me a url to a file"
+      exit 1
+    end
+    @file_url = ARGV[1]
+    begin
+      file_given = open(@file_url)
+    rescue StandardError=>e
+      puts "File cannot be opened, please check url"
+      exit 1
+    end
     outliers = []
     added = 0
     record_count = (file_given.readlines.size) - 1
