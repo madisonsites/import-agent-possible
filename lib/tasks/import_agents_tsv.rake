@@ -52,6 +52,11 @@ namespace :agents do
     puts "Skipped Records (Agent MLS | Agent Email): "
     outliers.each {|outlier| puts outlier}
   end
+  # Quickly remove agents for import smoke testing
+  desc "Removes all Agents"
+  task :destroy => :environment do |task, args|
+    Agent.delete_all
+  end
 end
 # Add empty task to allow for an argument outside of an array
 task :"#{file_url}"
